@@ -7,11 +7,33 @@ use App\Http\Controllers\Controller;
 use Validator;
 use App\Products;
 use App\Wishlists;
+use App\User;
+
 use File;
 
 
 class ApiController extends Controller
 {
+
+    function exportwishlist() {
+        $lists = Wishlists::leftjoin('users', 'users.id', '=', 'wishlists.user_id')
+        ->leftjoin('products','products.product_id',"=","wishlists.product_id")
+        ->selectRaw('COUNT(wishlists.user_id)','wishlists.*','users.name','products.product_name')
+        ->groupby('wishlists.user_id')
+        ->orderby('id', 'desc')
+        ->get();
+        //print_r($lists);exit;
+
+        if(isset($lists) && count($lists) > 0) {
+            header("Content-type: text/csv");
+            header("Content-Disposition: attachment; filename=file.csv");
+            header("Pragma: no-cache");
+            header("Expires: 0");
+            $columns = array('ID', 'User', 'Product Title', 'Review', 'Location', 'Created', 'Anonymous', 'Escalate', 'Rating', 'Name');
+            $file = fopen('php://output', 'w');
+            fputcsv($file, $columns);
+        }
+    }
 
     function savewishlist(Request $request) {
         $validation = Validator::make($request->all(),[

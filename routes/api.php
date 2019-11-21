@@ -23,3 +23,4 @@ Route::post('register', 'Api\UserController@register');
 Route::post('/savewishlist','Api\ApiController@savewishlist');
 Route::post('/saveproduct','Api\ApiController@saveproduct');
 Route::get('/products','Api\ApiController@getProducts');
+Route::get('/exportwishlist','Api\ApiController@exportwishlist');

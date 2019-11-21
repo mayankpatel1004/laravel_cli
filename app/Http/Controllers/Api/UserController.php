@@ -16,10 +16,10 @@ class UserController extends Controller
     public $successStatus = 200;
 
     public function login(){
+        $success = 1;
         if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
             $user = Auth::user();
-            $success['token'] =  $user->createToken('MyApp')->accessToken;
-            return response()->json(['success' => $success], $this->successStatus);
+            return response()->json(['success' => $success,'values' => $user], $this->successStatus);
         }
         else{
             return response()->json(['error'=>'Unauthorised'], 401);
@@ -43,7 +43,6 @@ class UserController extends Controller
         $input['password'] = bcrypt($input['password']);
         $input['api_token'] = base64_encode($input['email']);
         $user = User::create($input);
-        $success['token'] =  $user->createToken('MyApp')->accessToken;
         $success['name'] =  $user->name;
         return response()->json(['success' => 'User register successfully.','values' => $success,'errors' => $validator->errors()],200);
     }

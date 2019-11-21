@@ -22,6 +22,7 @@ Execute http://127.0.0.1
 
 ## How to get CSV data via Command Line Interface?
 Execute "php csv_cli.php" into command line
+"cli.csv" Will placed on root of directory
 
 ## Questions and Improvements
 For any question or emprovement please send an e-mail to Mayank Patel [mayank.patel104@gmail.com](mailto:mayank.patel104@gmail.com).

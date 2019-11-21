@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "2535e228-9b62-4431-9721-cb53222dd9f5",
+		"name": "Laravel CLI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Mayank Patel New\",\n\t\"email\":\"mayankpatel@yopmail.com\",\n\t\"password\":\"password\",\n\t\"password_confirmation\":\"password\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1/api/signup",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login API",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\" : \"mayankps@yopmail.com\",\n\t\"password\" : \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBkMTZjNzYwNjc3YzE5YzdlYWNlOTMyZDBkMWU2MzdkMmYxODE1NzZhZjI1ZTFmOTRiMzQ1MmNlZjQ5NjFjM2Q4Y2M1NTA4MGNlMzg1ZWNkIn0.eyJhdWQiOiIxIiwianRpIjoiMGQxNmM3NjA2NzdjMTljN2VhY2U5MzJkMGQxZTYzN2QyZjE4MTU3NmFmMjVlMWY5NGIzNDUyY2VmNDk2MWMzZDhjYzU1MDgwY2UzODVlY2QiLCJpYXQiOjE1NTM1ODA0NTUsIm5iZiI6MTU1MzU4MDQ1NSwiZXhwIjoxNTg1MjAyODU1LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.ZqrWHSlVQRCIMkfPhOVbExFKQ4xU4DuFbSQvImzZ9ssBdgc_90p8gRSea3aL9XWuEplQyNWzV1jnHu7gCnSwDZkNJZazPU67FmLGbN2VlitVaBmvth38N8OLIjJOsuoX7UZfvRNo5Wolp9UTNrkE-nZ2Ze45rCf1J7r5OVJUBh-4cC0jG8wk8on8ZryawiDMB31Db5_soUO4aelkkiNh_rFIsEOqLuLK1DbVdtAMpDAOayobf-QsEqhb08bh5CIYQGVbeRcgOp8-qgwHJjV3UVnSJY1g-oKC8LlTWe1Y_wSlNcdpIbcHLmBNBpB5QX3YAIb4qvBBIr9i0iAqOSFwvDd2zoU3UJJUATLfDm6eJxXeiN5h5Mwx8Conz3oG9vy3YffvCwRApZoBc-C1FU5E8Z18NN10mTr1IYb3CADV5mMS3PehdDtsyp-XeBSNnvMQlOd5cIH9IrUjrddfqQt-oP7g6Fb46HUl1d4Tf-lmqQ6mASyEr1jyrzIokDhib_4GczkT6EHIXVc_3BDIY6jyVybGwAPCMtN_VFl0jp1rSqCmUgDWA2VJidgHH5wDbhzZBuvC4fhE0nJEAdi_IehCG1EPmiPpAgEdi3INQIeDY7BuGHb3R5MAwn7MVC2TwkzRDHx0CjowK7j9SGbBOYy9SdPJwBd1_wf2JvKK4ru0K2U",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1/api/logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Productlist",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjA2ZGE5NTJiYTZkMGQzNzJkNDgwNmVmMzNmY2RkOGFjOGUwODA3YWNkZTY3NDQ5OTU5NTdkNDE1YTJkYmYxYmQ3Yzk5Y2ViNDYwM2I0ODFhIn0.eyJhdWQiOiIxIiwianRpIjoiMDZkYTk1MmJhNmQwZDM3MmQ0ODA2ZWYzM2ZjZGQ4YWM4ZTA4MDdhY2RlNjc0NDk5NTk1N2Q0MTVhMmRiZjFiZDdjOTljZWI0NjAzYjQ4MWEiLCJpYXQiOjE1NTQyNjI2MzksIm5iZiI6MTU1NDI2MjYzOSwiZXhwIjoxNTg1ODg1MDM4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.eelAGLkY9RmC0AifP1f-n04JC8KsQ23GiHoO3EpUsI9fS5wXqhVZmwo-UO4eNEwywj--Mqsk8H7xboJOefhzUwnX65BV5nSqYkPWtXN9hbH7VhLQj0AO0bX0BqZIS2Oh4PkfpkYfHzh3IR5ds12XEDtX9wUXozHu0edK9ccY5XrRbyedckZFKH4UxTrQeEledRboIblo7MwNrgh64CqT1bm7LitKLURY6lYGg093-D0kmdnMIE4wKQ029VfwgHR_z-h1ysHCqOrOf-cftmhOCp0oXr4lyAvWxJeKMKCgQYSDW9db3AfruPu005IDdR16a0321cU190Kat04lAIHOLEbsqWK7FkLXTFhSxCkIjbUVod4x4x3Ap4F36cJD6PtDYlug70hta1DbM_JL8kh5AOMPxHNZlBe5H8luQtuWPHniEK_Gi-iF-9cvLXkTeQrYJaIQuoiMvnu9qmKWilOnhBs9FhiYgm-p2iY8D6bhbsrI7LH5v6jVmuAH9Xm9MJA9PU8TLc7U5x0wrK7HXSrtzMqmAPBFvIiQc4YKS72pi6uLAXKd1OoxWLEhHwQXuL9edgENnlEs3Ch7O80ZG1PN7BXtZbx7clX8qlciB-IrmSlZ9vyZtelwr02e1i1Cr8OZOLEpY9_16r0Zlq43RmniiSplxzWnD_cDVs0KHHypmS8"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1/api/products",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Wishlist",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjA2ZGE5NTJiYTZkMGQzNzJkNDgwNmVmMzNmY2RkOGFjOGUwODA3YWNkZTY3NDQ5OTU5NTdkNDE1YTJkYmYxYmQ3Yzk5Y2ViNDYwM2I0ODFhIn0.eyJhdWQiOiIxIiwianRpIjoiMDZkYTk1MmJhNmQwZDM3MmQ0ODA2ZWYzM2ZjZGQ4YWM4ZTA4MDdhY2RlNjc0NDk5NTk1N2Q0MTVhMmRiZjFiZDdjOTljZWI0NjAzYjQ4MWEiLCJpYXQiOjE1NTQyNjI2MzksIm5iZiI6MTU1NDI2MjYzOSwiZXhwIjoxNTg1ODg1MDM4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.eelAGLkY9RmC0AifP1f-n04JC8KsQ23GiHoO3EpUsI9fS5wXqhVZmwo-UO4eNEwywj--Mqsk8H7xboJOefhzUwnX65BV5nSqYkPWtXN9hbH7VhLQj0AO0bX0BqZIS2Oh4PkfpkYfHzh3IR5ds12XEDtX9wUXozHu0edK9ccY5XrRbyedckZFKH4UxTrQeEledRboIblo7MwNrgh64CqT1bm7LitKLURY6lYGg093-D0kmdnMIE4wKQ029VfwgHR_z-h1ysHCqOrOf-cftmhOCp0oXr4lyAvWxJeKMKCgQYSDW9db3AfruPu005IDdR16a0321cU190Kat04lAIHOLEbsqWK7FkLXTFhSxCkIjbUVod4x4x3Ap4F36cJD6PtDYlug70hta1DbM_JL8kh5AOMPxHNZlBe5H8luQtuWPHniEK_Gi-iF-9cvLXkTeQrYJaIQuoiMvnu9qmKWilOnhBs9FhiYgm-p2iY8D6bhbsrI7LH5v6jVmuAH9Xm9MJA9PU8TLc7U5x0wrK7HXSrtzMqmAPBFvIiQc4YKS72pi6uLAXKd1OoxWLEhHwQXuL9edgENnlEs3Ch7O80ZG1PN7BXtZbx7clX8qlciB-IrmSlZ9vyZtelwr02e1i1Cr8OZOLEpY9_16r0Zlq43RmniiSplxzWnD_cDVs0KHHypmS8"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"product_id\" : \"1\",\n\t\"user_id\" : \"1\",\n\t\"created_at\" : \"2019-11-21 10:10:10\",\n\t\"updated_at\" : \"2019-11-21 10:10:10\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1/api/savewishlist",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"savewishlist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjA2ZGE5NTJiYTZkMGQzNzJkNDgwNmVmMzNmY2RkOGFjOGUwODA3YWNkZTY3NDQ5OTU5NTdkNDE1YTJkYmYxYmQ3Yzk5Y2ViNDYwM2I0ODFhIn0.eyJhdWQiOiIxIiwianRpIjoiMDZkYTk1MmJhNmQwZDM3MmQ0ODA2ZWYzM2ZjZGQ4YWM4ZTA4MDdhY2RlNjc0NDk5NTk1N2Q0MTVhMmRiZjFiZDdjOTljZWI0NjAzYjQ4MWEiLCJpYXQiOjE1NTQyNjI2MzksIm5iZiI6MTU1NDI2MjYzOSwiZXhwIjoxNTg1ODg1MDM4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.eelAGLkY9RmC0AifP1f-n04JC8KsQ23GiHoO3EpUsI9fS5wXqhVZmwo-UO4eNEwywj--Mqsk8H7xboJOefhzUwnX65BV5nSqYkPWtXN9hbH7VhLQj0AO0bX0BqZIS2Oh4PkfpkYfHzh3IR5ds12XEDtX9wUXozHu0edK9ccY5XrRbyedckZFKH4UxTrQeEledRboIblo7MwNrgh64CqT1bm7LitKLURY6lYGg093-D0kmdnMIE4wKQ029VfwgHR_z-h1ysHCqOrOf-cftmhOCp0oXr4lyAvWxJeKMKCgQYSDW9db3AfruPu005IDdR16a0321cU190Kat04lAIHOLEbsqWK7FkLXTFhSxCkIjbUVod4x4x3Ap4F36cJD6PtDYlug70hta1DbM_JL8kh5AOMPxHNZlBe5H8luQtuWPHniEK_Gi-iF-9cvLXkTeQrYJaIQuoiMvnu9qmKWilOnhBs9FhiYgm-p2iY8D6bhbsrI7LH5v6jVmuAH9Xm9MJA9PU8TLc7U5x0wrK7HXSrtzMqmAPBFvIiQc4YKS72pi6uLAXKd1OoxWLEhHwQXuL9edgENnlEs3Ch7O80ZG1PN7BXtZbx7clX8qlciB-IrmSlZ9vyZtelwr02e1i1Cr8OZOLEpY9_16r0Zlq43RmniiSplxzWnD_cDVs0KHHypmS8"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"product_name\" : \"Funnel\",\n\t\"description\" : \"Funnel Description\",\n\t\"amount\" : \"20.22\",\n\t\"status\" : \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1/api/saveproduct",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"api",
+						"saveproduct"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

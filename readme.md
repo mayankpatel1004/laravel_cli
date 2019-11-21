@@ -1,5 +1,4 @@
 # Laravel-Docker plug-and-play
-
 This is a quick plug-and-play setup for your `Laravel-Docker` projects
 
 Comes with:
@@ -20,6 +19,9 @@ Comes with:
 Now that all containers are up, we can add `127.0.0.1 project.local` to our `/etc/hosts` file
 
 Execute http://127.0.0.1
+
+## How to get CSV data via Command Line Interface?
+Execute "php csv_cli.php" into command line
 
 ## Questions and Improvements
 For any question or emprovement please send an e-mail to Mayank Patel [mayank.patel104@gmail.com](mailto:mayank.patel104@gmail.com).

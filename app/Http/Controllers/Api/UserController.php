@@ -35,20 +35,17 @@ class UserController extends Controller
             'c_password' => 'required|same:password',
         ]);
 
-
         if($validator->fails()){
             return response()->json(['errors' => $validator->errors()],401);
         }
 
-
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
+        $input['api_token'] = base64_encode($input['email']);
         $user = User::create($input);
         $success['token'] =  $user->createToken('MyApp')->accessToken;
         $success['name'] =  $user->name;
-
         return response()->json(['success' => 'User register successfully.','values' => $success,'errors' => $validator->errors()],200);
-        //return $this->sendResponse($success, 'User register successfully.');
     }
 
     function userdetails() {

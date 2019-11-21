@@ -18,15 +18,15 @@ try {
         $result = $stmt->fetchAll();
         $delimiter = ",";
         $filename = "members_" . date('Y-m-d') . ".csv";
-        $f = fopen('php://memory', 'w');
+        $f = fopen('cli.csv', 'w');
         $fields = array('Name', 'Items');
         foreach($result as $k=>$v) {
             $lineData = array($v['name'],$v['total_items']);
             fputcsv($f, $lineData, $delimiter);
         }
         fseek($f, 0);
-        header('Content-Type: text/csv');
-        header('Content-Disposition: attachment; filename="' . $filename . '";');
+        //header('Content-Type: text/csv');
+        //header('Content-Disposition: attachment; filename="' . $filename . '";');
         fpassthru($f);
         exit;
     }

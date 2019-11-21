@@ -8,8 +8,8 @@ Comes with:
 - database: `Mysql-5.7.22`
 
 ## Installatioin
-- `git clone git@github.com:shsma/laravel-docker.git`
-- `cd laravel-docker-master`
+- `git clone https://github.com/mayankpatel1004/laravel_cli.git`
+- `cd laravel-docker`
 - `docker-compose up -d`
 - `docker-compose exec app composer install`
 - `cp .env.example .env`
@@ -17,12 +17,7 @@ Comes with:
 
 Now that all containers are up, we can add `127.0.0.1 project.local` to our `/etc/hosts` file
 
-Boom! access `project.local` on your favorite browser
+Execute http://127.0.0.1
 
 ## Questions and Improvements
-
-For any question or emprovement please send an e-mail to Shady Smaoui [shady@veloxsolutions.ca](mailto:shady@veloxsolutions.ca).
-
-## License
-
-ShadySmaoui©2019 licensed under the [MIT license](https://opensource.org/licenses/MIT).
+For any question or emprovement please send an e-mail to Mayank Patel [mayank.patel104@gmail.com](mailto:mayank.patel104@gmail.com).

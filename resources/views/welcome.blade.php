@@ -81,14 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Shady Smaoui
-                </div>
-
-                <div class="links">
-                    <a href="https://shadysmaoui.ca">website</a>
-                    <a href="https://veloxsolutions.ca">startup</a>
-                    <a href="https://www.linkedin.com/in/shady-smaoui/">linkediIn</a>
-                    <a href="https://github.com/shsma">GitHub</a>
+                    Mayank Patel
                 </div>
             </div>
         </div>

@@ -24,23 +24,33 @@ class ApiController extends Controller
             'product_id.numeric' => 'Product value must be numeric',
             'user_id.required' => 'Please select user',
             'user_id.numeric' => 'User value must be numeric'
-        ]);
+            ]
+        );
         if($validation->fails()){
             return response()->json(['errors' => $validation->errors()->all()]);
         }else {
-            $forms = new Wishlists();
-            $forms->product_id=$request->get('product_id');
-            $forms->user_id=$request->get('user_id');
-            $forms->created_at = date('Y-m-d h:i:s');
-            $forms->save();
+            if(!isset($_SERVER['HTTP_TOKEN'])){
+                return response()->json(['errors' => "Api Token Missing"]);
+            } else {
+                $token_decode = base64_decode($_SERVER['HTTP_TOKEN']);
+                $user = User::where('email', '=', $token_decode)->first();
+                if($user) {
+                    $forms = new Wishlists();
+                    $forms->product_id=$request->get('product_id');
+                    $forms->user_id=$request->get('user_id');
+                    $forms->created_at = date('Y-m-d h:i:s');
+                    $forms->save();
+                    return response()->json([
+                        'status' => 'success',
+                        'code' => 200,
+                        'message' => 'Data successfully submitted',
+                        'values' => $request->all()
+                    ]);
+                } else {
+                    return response()->json(['errors' => "Api Token Mis-Match. Please pass valid API token"]);
+                }
+            }
         }
-
-        return response()->json([
-            'status' => 'success',
-            'code' => 200,
-            'message' => 'Data successfully submitted',
-            'values' => $request->all()
-        ]);
     }
 
     function saveproduct(Request $request) {
@@ -59,30 +69,50 @@ class ApiController extends Controller
         if($validation->fails()){
             return response()->json(['errors' => $validation->errors()->all()]);
         }else {
-            $forms = new Products();
-            $forms->product_name=$request->get('product_name');
-            $forms->description=$request->get('description');
-            $forms->status=$request->get('status');
-            $forms->amount=$request->get('amount');
-            $forms->created_at = date('Y-m-d h:i:s');
-            $forms->save();
-        }
+            if(!isset($_SERVER['HTTP_TOKEN'])){
+                return response()->json(['errors' => "Api Token Missing"]);
+            } else {
+                $token_decode = base64_decode($_SERVER['HTTP_TOKEN']);
+                $user = User::where('email', '=', $token_decode)->first();
+                if($user) {
+                    $forms = new Products();
+                    $forms->product_name=$request->get('product_name');
+                    $forms->description=$request->get('description');
+                    $forms->status=$request->get('status');
+                    $forms->amount=$request->get('amount');
+                    $forms->created_at = date('Y-m-d h:i:s');
+                    $forms->save();
 
-        return response()->json([
-            'status' => 'success',
-            'code' => 200,
-            'message' => 'Data successfully submitted',
-            'values' => $request->all()
-        ]);
+                    return response()->json([
+                        'status' => 'success',
+                        'code' => 200,
+                        'message' => 'Data successfully submitted',
+                        'values' => $request->all()
+                    ]);
+                } else {
+                    return response()->json(['errors' => "Api Token Mis-Match. Please pass valid API token"]);
+                }
+            }
+        }
     }
 
     function getProducts() {
-        $products = Products::all();
-        return response()->json([
-            'status' => 'success',
-            'code' => 200,
-            'message' => 'Data successfully submitted',
-            'values' => $products
-        ]);
+        if(!isset($_SERVER['HTTP_TOKEN'])){
+            return response()->json(['errors' => "Api Token Missing"]);
+        } else {
+            $token_decode = base64_decode($_SERVER['HTTP_TOKEN']);
+            $user = User::where('email', '=', $token_decode)->first();
+            if($user) {
+                $products = Products::all();
+                return response()->json([
+                    'status' => 'success',
+                    'code' => 200,
+                    'message' => 'Data successfully submitted',
+                    'values' => $products
+                ]);
+            } else {
+                return response()->json(['errors' => "Api Token Mis-Match. Please pass valid API token"]);
+            }
+        }
     }
 }
